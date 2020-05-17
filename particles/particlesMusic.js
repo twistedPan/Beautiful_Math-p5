@@ -129,11 +129,11 @@ let track = []
 function preload() {
     soundFormats('mp3', 'ogg')
     track = [
-        loadSound('../assets/sound/FormatB-IsaacNewtonWasWrong'),
-        loadSound('../assets/sound/Chief-thosewerethedays'),
-        loadSound('../assets/sound/Vantage-50__50'),
-        loadSound('../assets/sound/LÜNE-Absences'),
-        loadSound('../assets/sound/Voyage-Dynamic'),
+        loadSound('../_assets/sound/FormatB-IsaacNewtonWasWrong'),
+        loadSound('../_assets/sound/Chief-thosewerethedays'),
+        loadSound('../_assets/sound/Vantage-50__50'),
+        loadSound('../_assets/sound/LÜNE-Absences'),
+        loadSound('../_assets/sound/Voyage-Dynamic'),
     ]
 }
 let averageAmp = 0

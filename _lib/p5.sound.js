@@ -583,7 +583,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *    soundFormats('mp3', 'ogg');
    *
    *    // load either beatbox.mp3, or .ogg, depending on browser
-   *    mySound = loadSound('assets/beatbox.mp3');
+   *    mySound = loadSound('_assets/beatbox.mp3');
    *  }
    *
    *  function setup() {
@@ -3397,7 +3397,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  let mySound;
    *  function preload() {
    *    soundFormats('mp3', 'ogg');
-   *    mySound = loadSound('assets/doorbell');
+   *    mySound = loadSound('_assets/doorbell');
    *  }
    *
    *  function setup() {
@@ -3517,7 +3517,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  let mySound;
    *  function preload() {
    *    soundFormats('mp3', 'ogg');
-   *    mySound = loadSound('assets/doorbell');
+   *    mySound = loadSound('_assets/doorbell');
    *  }
    *
    *  function setup() {
@@ -3808,7 +3808,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  <div><code>
    *  let mySound;
    *  function preload(){
-   *    mySound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    mySound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *  function setup() {
    *    let cnv = createCanvas(100, 100);
@@ -3869,7 +3869,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  let soundFile;
    *  function preload() {
    *    soundFormats('ogg', 'mp3');
-   *    soundFile = loadSound('assets/Damscray_-_Dancing_Tiger_02.mp3');
+   *    soundFile = loadSound('_assets/Damscray_-_Dancing_Tiger_02.mp3');
    *  }
    *  function setup() {
    *    let cnv = createCanvas(100, 100);
@@ -3927,7 +3927,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  let loopDuration = 0.2;
    *  function preload() {
    *    soundFormats('ogg', 'mp3');
-   *    soundFile = loadSound('assets/Damscray_-_Dancing_Tiger_02.mp3');
+   *    soundFile = loadSound('_assets/Damscray_-_Dancing_Tiger_02.mp3');
    *  }
    *  function setup() {
    *    let cnv = createCanvas(100, 100);
@@ -4142,7 +4142,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *
    *  function preload() {
    *    soundFormats('ogg', 'mp3');
-   *    soundFile = loadSound('assets/beatbox.mp3');
+   *    soundFile = loadSound('_assets/beatbox.mp3');
    *  }
    *
    *  function draw() {
@@ -4196,7 +4196,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  let mySound;
    *
    *  function preload() {
-   *    mySound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    mySound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup() {
@@ -4442,7 +4442,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  <div><code>
    *  let drum;
    *  function preload() {
-   *    drum = loadSound('assets/drum.mp3');
+   *    drum = loadSound('_assets/drum.mp3');
    *  }
    *
    *  function setup() {
@@ -4958,7 +4958,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  <div><code>
    *  let mySound;
    *  function preload() {
-   *    mySound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    mySound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup() {
@@ -5063,7 +5063,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    *  <div><code>
    *  let mySound;
    *  function preload() {
-   *    mySound = loadSound('assets/doorbell.mp3');
+   *    mySound = loadSound('_assets/doorbell.mp3');
    *  }
    *  function setup() {
    *    let cnv = createCanvas(100, 100);
@@ -5099,7 +5099,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
    * @example
    *  <div><code>
    *  function preload() {
-   *    mySound = loadSound('assets/doorbell.mp3');
+   *    mySound = loadSound('_assets/doorbell.mp3');
    *  }
    *
    *  function setup() {
@@ -5198,7 +5198,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  let sound, amplitude;
    *
    *  function preload(){
-   *    sound = loadSound('assets/beat.mp3');
+   *    sound = loadSound('_assets/beat.mp3');
    *  }
    *  function setup() {
    *    let cnv = createCanvas(100,100);
@@ -5287,8 +5287,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  @example
    *  <div><code>
    *  function preload(){
-   *    sound1 = loadSound('assets/beat.mp3');
-   *    sound2 = loadSound('assets/drum.mp3');
+   *    sound1 = loadSound('_assets/beat.mp3');
+   *    sound2 = loadSound('_assets/drum.mp3');
    *  }
    *  function setup(){
    *    cnv = createCanvas(100, 100);
@@ -5375,7 +5375,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  @example
    *  <div><code>
    *  function preload(){
-   *    sound = loadSound('assets/beat.mp3');
+   *    sound = loadSound('_assets/beat.mp3');
    *  }
    *
    *  function setup() {
@@ -5535,7 +5535,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  @example
    *  <div><code>
    *  function preload(){
-   *    sound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    sound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup(){
@@ -8048,7 +8048,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *
    * function preload() {
    *   soundFormats('mp3', 'ogg');
-   *   soundFile = loadSound('assets/beat');
+   *   soundFile = loadSound('_assets/beat');
    * }
    *
    * function setup() {
@@ -9193,7 +9193,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  <div><code>
    *  let soundFile, reverb;
    *  function preload() {
-   *    soundFile = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    soundFile = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup() {
@@ -9423,16 +9423,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  <div><code>
    *  let cVerb, sound;
    *  function preload() {
-   *    // We have both MP3 and OGG versions of all sound assets
+   *    // We have both MP3 and OGG versions of all sound _assets
    *    soundFormats('ogg', 'mp3');
    *
    *    // Try replacing 'bx-spring' with other soundfiles like
    *    // 'concrete-tunnel' 'small-plate' 'drum' 'beatbox'
-   *    cVerb = createConvolver('assets/bx-spring.mp3');
+   *    cVerb = createConvolver('_assets/bx-spring.mp3');
    *
    *    // Try replacing 'Damscray_DancingTiger' with
    *    // 'beat', 'doorbell', lucky_dragons_-_power_melody'
-   *    sound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    sound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup() {
@@ -9504,16 +9504,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  <div><code>
    *  let cVerb, sound;
    *  function preload() {
-   *    // We have both MP3 and OGG versions of all sound assets
+   *    // We have both MP3 and OGG versions of all sound _assets
    *    soundFormats('ogg', 'mp3');
    *
    *    // Try replacing 'bx-spring' with other soundfiles like
    *    // 'concrete-tunnel' 'small-plate' 'drum' 'beatbox'
-   *    cVerb = createConvolver('assets/bx-spring.mp3');
+   *    cVerb = createConvolver('_assets/bx-spring.mp3');
    *
    *    // Try replacing 'Damscray_DancingTiger' with
    *    // 'beat', 'doorbell', lucky_dragons_-_power_melody'
-   *    sound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    sound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup() {
@@ -9643,16 +9643,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  <div><code>
    *  let cVerb, sound;
    *  function preload() {
-   *    // We have both MP3 and OGG versions of all sound assets
+   *    // We have both MP3 and OGG versions of all sound _assets
    *    soundFormats('ogg', 'mp3');
    *
    *    // Try replacing 'bx-spring' with other soundfiles like
    *    // 'concrete-tunnel' 'small-plate' 'drum' 'beatbox'
-   *    cVerb = createConvolver('assets/bx-spring.mp3');
+   *    cVerb = createConvolver('_assets/bx-spring.mp3');
    *
    *    // Try replacing 'Damscray_DancingTiger' with
    *    // 'beat', 'doorbell', lucky_dragons_-_power_melody'
-   *    sound = loadSound('assets/Damscray_DancingTiger.mp3');
+   *    sound = loadSound('_assets/Damscray_DancingTiger.mp3');
    *  }
    *
    *  function setup() {
@@ -9954,7 +9954,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  let pattern = [1,0,0,2,0,2,0,0];
    *
    *  function preload() {
-   *    mySound = loadSound('assets/beatbox.mp3');
+   *    mySound = loadSound('_assets/beatbox.mp3');
    *  }
    *
    *  function setup() {
@@ -10016,8 +10016,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  let drumPat = [0,1,1,0,2,0,1,0];
    *
    *  function preload() {
-   *    box = loadSound('assets/beatbox.mp3');
-   *    drum = loadSound('assets/drum.mp3');
+   *    box = loadSound('_assets/beatbox.mp3');
+   *    drum = loadSound('_assets/drum.mp3');
    *  }
    *
    *  function setup() {
@@ -11331,7 +11331,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  var ellipseWidth = 10;
    *
    *  function preload() {
-   *    soundFile = loadSound('assets/beat.mp3');
+   *    soundFile = loadSound('_assets/beat.mp3');
    *  }
    *
    *  function setup() {
@@ -11453,7 +11453,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  var ellipseWidth = 0;
    *
    *  function preload() {
-   *    soundFile = loadSound('assets/beat.mp3');
+   *    soundFile = loadSound('_assets/beat.mp3');
    *  }
    *
    *  function setup() {
@@ -11532,8 +11532,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
    *  let sound1Gain, sound2Gain, masterGain;
    *  function preload(){
    *    soundFormats('ogg', 'mp3');
-   *    sound1 = loadSound('assets/Damscray_-_Dancing_Tiger_01');
-   *    sound2 = loadSound('assets/beat');
+   *    sound1 = loadSound('_assets/Damscray_-_Dancing_Tiger_01');
+   *    sound2 = loadSound('_assets/beat');
    *  }
    *  function setup() {
    *    let cnv = createCanvas(100, 100);

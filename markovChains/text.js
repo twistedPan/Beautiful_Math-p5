@@ -24,11 +24,11 @@ let speed=0,
 
 function preload() {
     
-    txtObj.dante = loadStrings('../assets/txt/dante.txt')
-    txtObj.ff7 = loadStrings('../assets/txt/ff7.txt')
-    txtObj.hitler = loadStrings('../assets/txt/hitler.txt')
-    txtObj.kdh = loadStrings('../assets/txt/kdh.txt')
-    txtObj.simarilion = loadStrings('../assets/txt/simarilion.txt')
+    txtObj.dante = loadStrings('../_assets/txt/dante.txt')
+    txtObj.ff7 = loadStrings('../_assets/txt/ff7.txt')
+    txtObj.hitler = loadStrings('../_assets/txt/hitler.txt')
+    txtObj.kdh = loadStrings('../_assets/txt/kdh.txt')
+    txtObj.simarilion = loadStrings('../_assets/txt/simarilion.txt')
 
     txtArr = [
 

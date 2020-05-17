@@ -28,9 +28,9 @@ let ckForChange = []
 
 function preload() {
     pinkArr = [
-        loadImage('../assets/pinkGuy2-t.png'),
-        loadImage('../assets/pinkGuy3-t.png'),
-        loadImage('../assets/pinkGuy-t.png'),
+        loadImage('../_assets/pinkGuy2-t.png'),
+        loadImage('../_assets/pinkGuy3-t.png'),
+        loadImage('../_assets/pinkGuy-t.png'),
     ]
 }
 

@@ -25,11 +25,11 @@ let rectBool = false
 let alphaBool = false
 
 function preload() {
-    //apache = loadModel('assets/apacheH.obj');
+    //apache = loadModel('_assets/apacheH.obj');
     pinkArr = [
-        loadImage('assets/pinkGuy2-t.png'),
-        loadImage('assets/pinkGuy3-t.png'),
-        loadImage('assets/pinkGuy-t.png'),
+        loadImage('_assets/pinkGuy2-t.png'),
+        loadImage('_assets/pinkGuy3-t.png'),
+        loadImage('_assets/pinkGuy-t.png'),
     ]
 }
 
