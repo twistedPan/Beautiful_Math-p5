@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        input {
+            margin: 0 2%
+        }
+        #controlls {
+            position: absolute;
+            width: 870px;
+            top:1200px;
+            padding: 15px;
+            background-color: #181818;
+        }
+        button {
+            margin-left: 20px;
+            width: 10%;
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <!--
+        <script src="lib/p5-sound-min.js"></script>
+        <script src="cellulareSystem-greenTowers.js"></script>
+        
+    -->
+        <script src="cell_Automata_Wrong.js"></script>
+</head>
+<body>
+
+<div id="controlls">
+    <button id="startBtn">Start</button>
+    <button id="clearBtn">Clear</button>
+    <button id="shuffleBtn">Shuffle</button>
+    <input id="shuffleInp" type="number" value="5" min="1" max="100" style="width: 60px; text-align: center;">
+    <select id="selct">
+        <option value="1">Basic Life</option>
+        <option value="2">Crazy Life</option>
+        <option value="3" selected="selected">Dissolving</option>
+        <option value="4">Cloud District</option>
+        <option value="5">Day & Night</option>
+        <option value="6">Evolwing from Ground</option>
+        <option value="7">000</option>
+        <option value="8">000</option>
+        <option value="9">000</option>
+      </select>
+    <span style="color: white;"> Hold 'CTRL' to draw and Press 'S' to save your drawing</span>
+
+    <script>
+        setTimeout(setHeight, 200) 
+        function setHeight() {
+            canH = document.getElementsByTagName("canvas")[0].height + 1
+            canW = document.getElementsByTagName("canvas")[0].width - 30
+            document.getElementById("controlls").style.top = canH+"px"
+            document.getElementById("controlls").style.width = canW+"px"
+        }
+    </script>
+</div>
+
+</body></html>

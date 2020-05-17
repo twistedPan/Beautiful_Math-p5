@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+
+<script>
+
+let canSize = {w: 800, h:800}
+
+let cellCount = 150                 // Anzahl Zellen auf einer Linie
+let cellSize = canSize.w/cellCount  // Grösse der Zellen
+let cellGrid = []                   // Array für das Grid
+let run = false						
+
+let bgColor = "rgb(9, 7, 16)"
+
+// Klasse für Zellen
+class Cell {
+    
+    constructor(x,y) {
+        this.x = x          // Position im Array auf Y-Achse    ja ist hier verkehrt ^^'
+        this.y = y          // Position im Array auf X-Achse
+        this.state = 0      // Leben oder Tot
+        this.livingNbrs = 0 // Lebende Nachbarn
+
+        this.size = cellSize    // Grösse der Zelle
+        this.age = 1            // Alter für Spielerei
+    }
+    
+    getNeighbors() {
+        
+        // Frage Nachbarn ab, geht vielleicht auch einfacher ^^'
+        /*      (-1,-1)   (0,-1)   (+1,-1)
+              | 1.l_Top | 2.top  | 3.r_Top |   
+            
+        (-1,0)| 4.left  |you(0,0)| 5.right |(+1,0)
+            
+              | 6.l_Bot | 7.bot  | 8.r_Bot |
+                (-1,+1)   (0,+1)   (+1,+1)      */
+        
+        let areYouPeopleAlive = 0   // Zähler für lebende Nachbarn
+
+        /* 
+        // Abfrage mit for => erzeugt leere Felder, wo ist der Fehler?
+        for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+                if (cellGrid[this.x + i][this.y + j].state == 1) areYouPeopleAlive++
+            }
+        }
+        */
+
+        // Abfrage mit if
+        if (cellGrid[this.x -1][this.y -1].state == 1) areYouPeopleAlive++
+        if (cellGrid[this.x][this.y -1].state == 1) areYouPeopleAlive++
+        if (cellGrid[this.x +1][this.y -1].state == 1) areYouPeopleAlive++
+        
+        if (cellGrid[this.x -1][this.y].state == 1) areYouPeopleAlive++
+        if (cellGrid[this.x +1][this.y].state == 1) areYouPeopleAlive++
+        
+        if (cellGrid[this.x -1][this.y +1].state == 1) areYouPeopleAlive++
+        if (cellGrid[this.x][this.y +1].state == 1) areYouPeopleAlive++
+        if (cellGrid[this.x +1][this.y +1].state == 1) areYouPeopleAlive++
+
+
+        this.livingNbrs = areYouPeopleAlive
+    }
+    
+    update() {      // aktuallisiert die Infos über lebende Zellen
+
+        this.getNeighbors() // erhalte lebende Nachbarn
+        
+        // The Rules Of Life 
+        // Hier folgt die B/S (Birth/Stay Alive) Regel
+
+        // Day & Night - B3678 / S34678 - do gits eher es Flammeinferno
+        if (this.livingNbrs == 2 || this.livingNbrs == 4 || this.livingNbrs == 6 || 
+            this.livingNbrs == 7 || this.livingNbrs == 8) this.state = 1
+            else this.state = 0
+   
+
+        // Spielereinen
+        if (this.state == 1) this.age++
+        else this.age = 1
+
+        if (this.age > 80) this.killThisCell() // sollte verständlich sein
+
+
+        this.display() // Zeige die Zellen an
+    }
+    
+    display() {     // Darstellung der Punkte auf dem Grid
+    
+        if (this.state == 1) fill("rgb(222, "+ (22*this.age) +", 72)") // wenn Zelle lebt Farbe Rot
+        else fill(bgColor)                   // wenn Zelle tot Farbe Hintergrund
+
+        //if (this.x == 22) fill("green")
+        //if (this.y == 23) fill("blue")
+
+        rect(
+            this.x * this.size,     // Platzierung entlang der x-Achse
+            this.y * this.size,     // Platzierung entlang der y-Achse
+            this.size,this.size)
+        
+        // rect(this.x * this.size, this.y * this.size, this.size)
+    }
+    
+    killThisCell() {    // alles drumherum = 0
+        for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+                cellGrid[this.x + i][this.y + j].state = 0
+            }
+        }
+        this.state = 0
+    }
+}
+
+
+// SETUP -----------------------------------------------------------------
+function setup() {
+    createCanvas(canSize.w, canSize.h)
+    frameRate(10)
+    background(bgColor)
+
+    createP("") // Zeilenumbruch
+    startButton = createButton("Start").mousePressed(startTheGame) // erzeuge Button und verlinke Funktion
+    createButton("Reload").mousePressed(reloadPage) // erzeuge Button und verlinke Funktion
+
+    // initial Wert i= -1 sowie j= -1 damit die Zellen am Rand auch Nachbarn haben, gleiches für äusserste 
+    for (let i = -1; i < cellCount+1; i++) {              // äussere Schleife erzeugt leeres x-Array
+        cellGrid[i] = []
+        for (let j = -1; j < cellCount+1; j++) {        // innere Schleife füllt y-Array mit Zellen
+            cellGrid[i][j] = new Cell(i,j)  // j,i => spiegelt das Feld 
+        }                                   
+    }                                       
+
+    // State manipulation, Erzeugung
+/*
+// Set States: Variate mit for-Loop => Setzt jedes zweite Element auf "Alive"
+    for(let i = -1; i<cellGrid.length; i+=2) {
+        for (let j = -1; j<cellGrid[i].length; j+=2) {
+            cellGrid[i][j].state = 1
+        }
+    }
+*/
+
+// Set States: Variate mit forEach  => Setzt random Zellen auf "Alive"
+    cellGrid.forEach((row) => { // für jeden index(row) in cellgrid
+        row.forEach((c) => {    // für jeden index(cell) in cellgrid[]
+            if (Math.random() < 0.1) c.state = 1    // random State
+            else c.state = 0                        // random State 
+        });
+    });
+
+
+// Zeige das Grid an, -1 damit die letzten indexies ignoriert werden, da dort kein Nachbar existiert
+for(let i = 0; i<cellGrid.length-1; i++) {
+    for (let j = 0; j<cellGrid[i].length-1; j++) {
+        cellGrid[i][j].display()
+    }
+}
+
+}
+
+// DRAW -----------------------------------------------------------------
+function draw() {
+    noStroke()
+    
+    if (run) {
+       
+        for(let i = 0; i<cellGrid.length-1; i++) {
+            for (let j = 0; j<cellGrid[i].length-1; j++) {
+                cellGrid[i][j].update()
+            }
+        }
+        //console.log("Age of Cell[23/12]:",cellGrid[23][12].age)
+    }
+
+    
+} // END OF DRAMA
+
+
+
+function startTheGame() {
+    if (!run) {
+        run = true    // Start Game of Life
+        startButton.elt.innerText = "läuft"
+    }
+    else {
+        run = false   // Stop it
+        startButton.elt.innerText = "pausiert"
+    }
+}
+
+function reloadPage() {
+    location.reload()       // läd die komplette Seite neu (nicht empfohlen ^^')
+}
+    
+    
+    
+    
+</script>
+</head>
+<body>
+
+</body></html>
