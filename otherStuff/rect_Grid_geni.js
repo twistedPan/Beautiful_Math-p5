@@ -28,7 +28,7 @@ class Particle {
         this.y = y
         this.size = r || cellSize
         this.color = 0
-        this.direction = getOne(1,-1) // getOne(getOne(this.x,-this.x),getOne(this.y,-this.y))
+        this.direction = getOne(1,-1)
     }
     update(cell) {
         this.x += cellSize
@@ -38,11 +38,9 @@ class Particle {
         if (this.x > can.w) {
             this.x = cellSize/2
             this.y += cellSize*3
-            //this.x = (cellSize*3) * (randomRNG(0,cell/2))
-            //this.y = (cellSize*3) * (randomRNG(1,cell/2))
         }
 
-        if (this.y > can.h+cellSize*2) {
+        if (this.y > can.h+cellSize*4) {
             background(bgC)
             particles[0].reset()
         }
@@ -81,8 +79,6 @@ function setup() {
 
     for (let i = 0; i < particlesCount; i++) {
         particles[i] = new Particle(
-            //cellSize * (randomRNG(0,cellSize/2)),
-            //cellSize * (randomRNG(0,cellSize/2))
             cellSize/2, cellSize*1.5)
     }
 }
