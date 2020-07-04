@@ -29,7 +29,7 @@ function setup() {
     background(0)
     stroke(255)
     strokeWeight(1)
-
+/*
     createP("")
     sp1 = createSpan("S1").style("marginLeft", "10px")
     sp2 = createSpan("S2").style("marginLeft", "160px")
@@ -40,7 +40,7 @@ function setup() {
     s2 = createSlider(1,50,4,0)
     s3 = createSlider(1,50,5,1)
     s4 = createSlider(1,1000,1,1)
-
+*/
     
     sorted = createImage(img.width, img.height)
     sorted.loadPixels()
