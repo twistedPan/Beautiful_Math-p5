@@ -1,0 +1,10 @@
+Modul: MATH2 - Beautiful Mathematics
+Student: Dennis Düblin
+
+Idee: Text Elemente die vor dem Spieler flüchten.
+Code-Elemente: 
+Die Markovsachen hab ich von den aus dem Unterricht entstandenen Übungen genommen.
+Die Klasse Figure entstand aus einer meiner Vorlagen für bewegliche Elemente.
+
+
+Bugs: Teilweise wird der Text nicht gelesen, dann einfach Seite neuladen
